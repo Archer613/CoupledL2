@@ -156,18 +156,18 @@ class CHIREQ extends CHIBundle {
   // BE CAUTIOUS with the order of the flit fields
 
   /* LSB */
-  val qos = UInt(QOS_WIDTH.W)
-  val tgtID = UInt(TGTID_WIDTH.W)
-  val srcID = UInt(SRCID_WIDTH.W)
-  val txnID = UInt(TXNID_WIDTH.W)
+  val qos = UInt(QOS_WIDTH.W) // 4
+  val tgtID = UInt(TGTID_WIDTH.W) // NODEID_WIDTH 7
+  val srcID = UInt(SRCID_WIDTH.W) // NODEID_WIDTH 7
+  val txnID = UInt(TXNID_WIDTH.W) // 8
 
-  val returnNID = UInt(RETURNNID_WIDTH.W) // Used for DMT
-  def stashNID = returnNID // Used for Stash
+  val returnNID = UInt(RETURNNID_WIDTH.W) // Used for DMT // NODEID_WIDTH 7
+  def stashNID = returnNID // Used for Stash // NODEID_WIDTH 7
 
   val stashNIDValid = Bool() // Used for Stash
-  def endian = stashNIDValid // Used for Atomic
+  def endian = stashNIDValid // Used for Atomic // Bool()
 
-  val returnTxnID = UInt(RETURNTXNID_WIDTH.W)
+  val returnTxnID = UInt(RETURNTXNID_WIDTH.W) //
   def stashLPID = returnTxnID(STASHLPID_WIDTH - 1, 0)
   def stashLPIDValid = returnTxnID(STASHLPID_WIDTH).asBool
 

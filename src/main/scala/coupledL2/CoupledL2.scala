@@ -30,7 +30,7 @@ import freechips.rocketchip.util._
 import org.chipsalliance.cde.config.{Parameters, Field}
 import scala.math.max
 import coupledL2.prefetch._
-import huancun.{TPmetaReq, TPmetaResp, BankBitsKey}
+import huancun.{TPmetaReq, TPmetaResp}
 
 trait HasCoupledL2Parameters {
   val p: Parameters

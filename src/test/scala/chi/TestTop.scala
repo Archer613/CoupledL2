@@ -175,8 +175,8 @@ object TestTopCHIHelper {
         elaboratedTopDown   = false,
         FPGAPlatform        = FPGAPlatform,
 
-        // SAM for tester ICN: Home Node ID = 33
-        sam                 = Seq(AddressSet.everything -> 33)
+        // SAM for tester ICN: Home Node ID = 0
+        sam                 = Seq(AddressSet.everything -> 0)
       )
     })
 
